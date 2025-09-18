@@ -8,6 +8,10 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: codebase/rdicidr-0.1.0   # 👈 point to your app folder
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
