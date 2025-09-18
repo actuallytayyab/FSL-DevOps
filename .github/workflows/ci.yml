@@ -1,7 +1,9 @@
 name: CI Pipeline
 
 on:
-  push:   # 👈 Trigger on push instead of pull request
+  push:
+    branches:
+      - main   # 👈 run only when pushing to main
 
 jobs:
   build-and-test:
@@ -9,7 +11,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: codebase/rdicidr-0.1.0   # 👈 point to your app folder
+        working-directory: codebase/rdicidr-0.1.0   # 👈 app folder
 
     steps:
       - name: Checkout repo
